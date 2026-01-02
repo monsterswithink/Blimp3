@@ -7,7 +7,13 @@ import { FloatingToolbar } from "./FloatingToolbar";
 import { CanvasLayout } from "./CanvasLayout";
 import { GridLayout } from "./GridLayout";
 import { ZoomFocusView } from "./ZoomFocusView";
-import { Tile, CanvasLayout } from "./liveblocks.config";
+import { Tile } from "./liveblocks.config";
+
+interface CanvasLayout {
+  mode: "canvas" | "grid";
+  zoom: number;
+  focusedTileId?: string;
+}
 
 export function BrowserCanvas() {
   const updatePresence = useUpdateMyPresence();
